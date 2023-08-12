@@ -6,7 +6,7 @@ import { ToDoItem } from "./ToDoItem";
 export const ToDoList: FC = () => {
     const { todos } = useContext(todoContext)
     return (
-        <List>
+        <List overflow="scroll">
             {todos.map((item) => (
                 <ToDoItem key={item.index} index={item.index} todo={item.todo} isDone={item.isDone} />
             ))}

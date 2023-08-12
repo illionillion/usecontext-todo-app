@@ -6,7 +6,7 @@ import { ToDoList } from "./ToDoList";
 export const ToDoApp: FC = () => {
     return (
         <Box width="full" height="100svh" justifyContent="center" alignItems="center" display="flex">
-            <Flex direction="column">
+            <Flex width="50%" minWidth="350px" height="full" direction="column" gap={5} paddingY="10%">
                 <TextAdd />
                 <ToDoList />
             </Flex>

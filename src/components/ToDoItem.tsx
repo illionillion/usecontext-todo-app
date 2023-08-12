@@ -42,7 +42,7 @@ export const ToDoItem: FC<ToDoItemProps> = ({ index, todo, isDone }) => {
     }, [todoState])
 
     return (
-        <ListItem>
+        <ListItem marginBottom={5}>
             <Flex>
                 <Input value={todoState.todo} onInput={handleTodoChange} ref={inputRef} />
                 <Button onClick={handleIsDoneChange}>{todoState.isDone ? "完了" : "未完了"}</Button>

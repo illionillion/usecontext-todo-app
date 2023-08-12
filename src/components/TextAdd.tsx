@@ -23,7 +23,7 @@ export const TextAdd: FC = () => {
     }
 
     return (
-        <Box padding="5px 10px">
+        <Box>
             <InputGroup>
                 <Input value={todo} onInput={handleTodoChange} />
                 <InputRightElement width='4.5rem'>
