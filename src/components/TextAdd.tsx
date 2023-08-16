@@ -27,7 +27,7 @@ export const TextAdd: FC = () => {
             <InputGroup>
                 <Input value={todo} onInput={handleTodoChange} />
                 <InputRightElement width='4.5rem'>
-                    <Button h='1.75rem' size='sm' onClick={handleAdd}>
+                    <Button h='1.75rem' size='sm' onClick={handleAdd} colorScheme="green">
                         Add
                     </Button>
                 </InputRightElement>

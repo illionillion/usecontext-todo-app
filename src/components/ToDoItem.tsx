@@ -46,7 +46,7 @@ export const ToDoItem: FC<ToDoItemProps> = ({ index, todo, isDone }) => {
             <Flex>
                 <Input value={todoState.todo} onInput={handleTodoChange} ref={inputRef} />
                 <Button onClick={handleIsDoneChange}>{todoState.isDone ? "完了" : "未完了"}</Button>
-                <Button onClick={handleRemove}>削除</Button>
+                <Button onClick={handleRemove} colorScheme="red">削除</Button>
             </Flex>
         </ListItem>
     )
