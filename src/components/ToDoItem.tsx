@@ -10,13 +10,13 @@ interface ToDoItemProps {
 
 export const ToDoItem: FC<ToDoItemProps> = ({ index, todo, isDone }) => {
 
-    const [todoState, setTodoState] = useState<TodoType>({index:index, todo: todo, isDone: isDone })
+    const [todoState, setTodoState] = useState<TodoType>({ index: index, todo: todo, isDone: isDone })
     const { updateTodo, removeTodo } = useContext(todoContext)
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     const handleTodoChange = () => {
         if (inputRef.current) {
-            
+
             setTodoState(prev => ({
                 isDone: prev.isDone,
                 todo: inputRef.current!.value,
@@ -46,7 +46,7 @@ export const ToDoItem: FC<ToDoItemProps> = ({ index, todo, isDone }) => {
             <Flex>
                 <Input value={todoState.todo} onInput={handleTodoChange} ref={inputRef} />
                 <Button onClick={handleIsDoneChange}>{todoState.isDone ? "完了" : "未完了"}</Button>
-                <Button onClick={handleRemove} colorScheme="red">削除</Button>
+                <Button onClick={handleRemove} color="red">削除</Button>
             </Flex>
         </ListItem>
     )
