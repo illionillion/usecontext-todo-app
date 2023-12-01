@@ -1,4 +1,4 @@
-import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Box, Button, Input, InputGroup, InputRightElement, useDisclosure } from "@chakra-ui/react";
+import { AlertDialog, AlertDialogBody, AlertDialogContent, AlertDialogFooter, AlertDialogHeader, AlertDialogOverlay, Box, Button, CloseButton, Input, InputGroup, InputRightElement, useDisclosure } from "@chakra-ui/react";
 import { FC, FormEvent, useContext, useRef, useState } from "react";
 import { todoContext } from "../context/theme";
 
@@ -8,6 +8,8 @@ export const TextAdd: FC = () => {
     const { currentIndex, todos, addTodo, clearTodo } = useContext(todoContext)
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = useRef<HTMLButtonElement>(null)
+
+    const handleInputClear = () => setTodo("")
 
     const handleTodoChange = (e: FormEvent<HTMLInputElement>) => {
         setTodo(e.currentTarget.value)
@@ -67,7 +69,8 @@ export const TextAdd: FC = () => {
             <Box>
                 <InputGroup>
                     <Input value={todo} onInput={handleTodoChange} />
-                    <InputRightElement width='7.5rem' gap={1} paddingX={1}>
+                    <InputRightElement width='9.0rem' gap={1} paddingX={1}>
+                        <CloseButton onClick={handleInputClear} />
                         <Button h='1.75rem' size='sm' onClick={handleDialogOpen} colorScheme="red">
                             Clear
                         </Button>
